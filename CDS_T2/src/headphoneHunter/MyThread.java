@@ -1,3 +1,4 @@
+package headphoneHunter;
 import java.security.NoSuchAlgorithmException;
 
 public class MyThread extends Thread {
@@ -15,14 +16,16 @@ public class MyThread extends Thread {
 		this.url2 = url2;
 	}
 
-
-
 	public void run() {
 
 		DownloadPage dp = new DownloadPage();
+	
 		try {
-			dp.download(url1,"cell");
-			dp.download(url2, "emag");
+			
+			dp.download(url1,"cell" + id);
+			if (id + 1 <= 11) {
+				dp.download(url2, "emag" + id);
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
