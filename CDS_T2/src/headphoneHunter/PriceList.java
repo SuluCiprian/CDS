@@ -1,14 +1,11 @@
 package headphoneHunter;
 
-public class Price {
+public class PriceList {
 
 	private String price;
 	private String link;
 	
-	public Price(String price, String link) {
-		this.price = price;
-		this.link = link;
-	}
+	
 	
 	public String getPrice() {
 		return price;

@@ -1,18 +1,18 @@
 package headphoneHunter;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Headphone {
 
 	private String title;
 	private String id;
-	private List<Price> priceList;
+	//private  List<PriceList> priceList = new ArrayList<PriceList>();
+	private  List<PriceList> priceList;
 	
-	public Headphone(String title, String id, List<Price> priceList) {
-		this.title = title;
-		this.id = id;
-		this.priceList = priceList;
-	}
+//	public Headphone() {
+//		priceList = new ArrayList<PriceList>();
+//	}
 	public String getTitle() {
 		return title;
 	}
@@ -25,11 +25,15 @@ public class Headphone {
 	public void setId(String id) {
 		this.id = id;
 	}
-	public List<Price> getPriceList() {
+	public List<PriceList> getPriceList() {
 		return priceList;
 	}
-	public void setPriceList(List<Price> priceList) {
+	public void setPriceList(List<PriceList> priceList) {
 		this.priceList = priceList;
+	}
+	public void addPrice(PriceList price) {
+		this.priceList = new ArrayList<PriceList>();
+		this.priceList.add(price);
 	}
 	
 }
