@@ -3,37 +3,48 @@ package headphoneHunter;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Headphone {
+public class Headphone implements Comparable<Headphone> {
 
 	private String title;
 	private String id;
-	//private  List<PriceList> priceList = new ArrayList<PriceList>();
-	private  List<PriceList> priceList;
-	
-//	public Headphone() {
-//		priceList = new ArrayList<PriceList>();
-//	}
+	private int pirce;
+	private String link;
+
+	public int getPirce() {
+		return pirce;
+	}
+
+	public void setPirce(int pirce) {
+		this.pirce = pirce;
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
+
 	public String getTitle() {
 		return title;
 	}
+
 	public void setTitle(String title) {
 		this.title = title;
 	}
+
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
-	public List<PriceList> getPriceList() {
-		return priceList;
+
+	@Override
+	public int compareTo(Headphone headphone) {
+		return this.pirce - headphone.pirce;
 	}
-	public void setPriceList(List<PriceList> priceList) {
-		this.priceList = priceList;
-	}
-	public void addPrice(PriceList price) {
-		this.priceList = new ArrayList<PriceList>();
-		this.priceList.add(price);
-	}
-	
+
 }

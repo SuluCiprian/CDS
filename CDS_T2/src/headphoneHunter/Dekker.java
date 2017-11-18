@@ -8,7 +8,7 @@ class Dekker {
 	private AtomicIntegerArray flag = new AtomicIntegerArray(24);
 
 	public Dekker() {
-		for (int i = 0; i < 24; i++) {
+		for (int i = 0; i < 25; i++) {
 			flag.set(i, 0);
 }
 		turn = 0;
@@ -17,7 +17,7 @@ class Dekker {
 	public void Pmutex(int t) {
 		int other;
 
-		other = 23 - t;
+		other = 24 - t;
 		flag.set(t, 1);
 		while (flag.get(other) == 1) {
 			if (turn == other) {
@@ -30,7 +30,7 @@ class Dekker {
 	}
 
 	public void Vmutex(int t) {
-		turn = 23 - t;
+		turn = 24 - t;
 		flag.set(t, 0);
 	}
 
